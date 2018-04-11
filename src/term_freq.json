@@ -1,0 +1,252 @@
+{
+  "axes": [
+    {
+      "properties": {
+        "labels": {
+          "angle": {
+            "value": 90
+          }
+        }
+      },
+      "scale": "x",
+      "type": "x"
+    },
+    {
+      "scale": "y",
+      "type": "y"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "col": "data",
+          "idx": "#rusfra",
+          "val": 8
+        },
+        {
+          "col": "data",
+          "idx": "#us",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "#uk",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "#saudi",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "#usa",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "#yemen",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "#stoparmingsaudi",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "#yemengenocide",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "#semaineindustrie",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "#mondaymotivation",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "#yemencantwait",
+          "val": 3
+        },
+        {
+          "col": "data",
+          "idx": "@antogriezmann",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "@kmbappe",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "@paulpogba",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "@equipedefrance",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "#frarus",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "#coupedelahonte",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "#fracol",
+          "val": 2
+        },
+        {
+          "col": "data",
+          "idx": "l'ancienne",
+          "val": 1
+        },
+        {
+          "col": "data",
+          "idx": "https://t.co/fPFIBlwhkh",
+          "val": 1
+        },
+        {
+          "col": "data",
+          "idx": "hello",
+          "val": 1
+        },
+        {
+          "col": "data",
+          "idx": "want",
+          "val": 1
+        },
+        {
+          "col": "data",
+          "idx": "hq",
+          "val": 1
+        },
+        {
+          "col": "data",
+          "idx": "40",
+          "val": 1
+        },
+        {
+          "col": "data",
+          "idx": "#forums",
+          "val": 1
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "table",
+      "transform": [
+        {
+          "keys": [
+            "data.idx"
+          ],
+          "type": "facet"
+        },
+        {
+          "type": "stats",
+          "value": "data.val"
+        }
+      ]
+    }
+  ],
+  "height": 500,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "table",
+        "transform": [
+          {
+            "keys": [
+              "data.col"
+            ],
+            "type": "facet"
+          },
+          {
+            "height": "data.val",
+            "point": "data.idx",
+            "type": "stack"
+          }
+        ]
+      },
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "fill": {
+                "field": "data.col",
+                "scale": "color"
+              },
+              "width": {
+                "band": true,
+                "offset": -1,
+                "scale": "x"
+              },
+              "x": {
+                "field": "data.idx",
+                "scale": "x"
+              },
+              "y": {
+                "field": "y",
+                "scale": "y"
+              },
+              "y2": {
+                "field": "y2",
+                "scale": "y"
+              }
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "type": "group"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.idx"
+      },
+      "name": "x",
+      "range": "width",
+      "type": "ordinal",
+      "zero": false
+    },
+    {
+      "domain": {
+        "data": "stats",
+        "field": "sum"
+      },
+      "name": "y",
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.col"
+      },
+      "name": "color",
+      "range": "category20",
+      "type": "ordinal"
+    }
+  ],
+  "width": 960
+}
